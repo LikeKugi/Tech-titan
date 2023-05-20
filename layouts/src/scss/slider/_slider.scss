@@ -1,0 +1,13 @@
+.slider {
+  padding: 10px 0;
+
+  &__title {
+    text-align: center;
+    color: $dark;
+  }
+
+  &__content {
+    background-color: $slider;
+    padding: 50px 0;
+  }
+}
