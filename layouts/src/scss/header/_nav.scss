@@ -21,15 +21,6 @@
     &-right {
       display: flex;
       flex-wrap: wrap;
-
-      &:first-child,
-      &:nth-child(2) {
-        max-width: 50%;
-      }
-
-      &:nth-child(3) {
-        width: 100%;
-      }
     }
   }
 
@@ -50,5 +41,9 @@
 
   &--main {
     background-color: $main;
+  }
+
+  &--small {
+    max-width: 50%;
   }
 }
