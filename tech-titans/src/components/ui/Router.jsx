@@ -18,6 +18,12 @@ const Router = (props) => {
 
             <Route element={<HomePage/>}
                    path={'/'}/>
+            <Route element={<HomePage/>}
+                   path={'/index'}/>
+            <Route element={<HomePage/>}
+                   path={'/index.html'}/>
+            <Route element={<HomePage/>}
+                   path={'/index.htm'}/>
             <Route element={<Authorization/>}
                    path={'/login'}/>
             <Route element={<News/>}
