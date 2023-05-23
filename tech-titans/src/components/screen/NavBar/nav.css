@@ -1,0 +1,9 @@
+.nav__list {
+  display: flex;
+  list-style-type: none;
+}
+.nav__item:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+/*# sourceMappingURL=nav.css.map */
