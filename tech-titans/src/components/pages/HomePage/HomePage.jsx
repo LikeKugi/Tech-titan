@@ -1,6 +1,16 @@
-import {redirect} from 'react-router-dom';
+import {selectUserRole, selectIsLoggedIn} from "../../../store/slices/userSlice";
+import {useSelector} from "react-redux";
+
 const HomePage = (props) => {
-  return <div> HomePage</div>;
+  const currentRole = useSelector(selectUserRole)
+  const currentLogged = useSelector(selectIsLoggedIn)
+  console.log(currentLogged)
+  return (
+      <section>
+        <h2>Main</h2>
+        <p>{currentRole}</p>
+        <p>{currentLogged.toString()}</p>
+      </section>);
 }
 export default HomePage;
 

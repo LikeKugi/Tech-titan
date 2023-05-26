@@ -8,12 +8,15 @@ import Footer from "../screen/Footer/Footer";
 import PageContent from "../screen/PageContent/PageContent";
 import Vacancies from "../pages/Vacancies/Vacancies";
 import CareerProjects from "../pages/CareerProjects/CareerProjects";
+import Energies from "../screen/Energies/Energies";
+import Profile from "../pages/Profile/Profile";
 
 const Router = (props) => {
   return (
       <BrowserRouter>
         <Header/>
         <PageContent>
+          <Energies />
           <Routes>
 
             <Route element={<HomePage/>}
@@ -30,6 +33,9 @@ const Router = (props) => {
                    path={'/news'}/>
             <Route element={<CareerProjects/>} path={'/career'}/>
             <Route element={<Vacancies/>} path={'/vacancies'}/>
+            <Route element={<Profile />} path={'/profile'}>
+
+            </Route>
 
 
             <Route path='*'
