@@ -10,38 +10,55 @@ import Vacancies from "../pages/Vacancies/Vacancies";
 import CareerProjects from "../pages/CareerProjects/CareerProjects";
 import Energies from "../screen/Energies/Energies";
 import Profile from "../pages/Profile/Profile";
+import InternPhonetic from "../roles/Intern/InternApplication/InternPhoenetic";
+import InternCareer from "../roles/Intern/InternCareer/InternCareer";
+import InternTest from "../roles/Intern/InternTest/InternTest";
+import InternNews from "../roles/Intern/InternNews/InternNews";
+import Container from "../screen/Container/Container";
 
 const Router = (props) => {
   return (
       <BrowserRouter>
         <Header/>
-        <PageContent>
-          <Energies />
-          <Routes>
 
-            <Route element={<HomePage/>}
-                   path={'/'}/>
-            <Route element={<HomePage/>}
-                   path={'/index'}/>
-            <Route element={<HomePage/>}
-                   path={'/index.html'}/>
-            <Route element={<HomePage/>}
-                   path={'/index.htm'}/>
-            <Route element={<Authorization/>}
-                   path={'/login'}/>
-            <Route element={<News/>}
-                   path={'/news'}/>
-            <Route element={<CareerProjects/>} path={'/career'}/>
-            <Route element={<Vacancies/>} path={'/vacancies'}/>
-            <Route element={<Profile />} path={'/profile'}>
+            <PageContent>
+            <Energies/>
+            <Routes>
 
-            </Route>
+              <Route path={'/'}
+                     element={<HomePage/>}/>
+              <Route path={'/index'}
+                     element={<HomePage/>}/>
+              <Route path={'/index.html'}
+                     element={<HomePage/>}/>
+              <Route path={'/index.htm'}
+                     element={<HomePage/>}/>
+              <Route path={'/login'}
+                     element={<Authorization/>}/>
+              <Route path={'/news'}
+                     element={<News/>}/>
+              <Route path={'/career'}
+                     element={<CareerProjects/>}/>
+              <Route path={'/vacancies'}
+                     element={<Vacancies/>}/>
+              <Route element={<Profile/>}
+                     path={'/profile'}>
+                <Route path={'phonetic'}
+                       element={<InternPhonetic/>}/>
+                <Route path={'career'}
+                       element={<InternCareer/>}/>
+                <Route path={'test'}
+                       element={<InternTest/>}/>
+                <Route path={'news'}
+                       element={<InternNews/>}/>
+              </Route>
 
 
-            <Route path='*'
-                   element={<NotFound/>}/>
-          </Routes>
-        </PageContent>
+              <Route path='*'
+                     element={<NotFound/>}/>
+            </Routes>
+            </PageContent>
+
         <Footer/>
       </BrowserRouter>
   )

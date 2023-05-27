@@ -1,14 +1,22 @@
-import {Box} from "@mui/material";
-import {Outlet} from "react-router-dom";
+import {NavLink, Outlet} from "react-router-dom";
+import './Intern.css';
 
 const Intern = (props) => {
+
   return (
-      <Box sx={{
-          width: '100%',
-          height: '100%',
-      }}>
+      <div className='profile'>
+        <nav className="profile__nav controls">
+          <ul className="controls__list">
+            <li className="controls__item"><NavLink className='controls__link' to={'phonetic'} > Phonetic </NavLink></li>
+            <li className="controls__item"><NavLink className='controls__link' to={'career'} > Career </NavLink></li>
+            <li className="controls__item"><NavLink className='controls__link' to={'test'} > Test </NavLink></li>
+            <li className="controls__item"><NavLink className='controls__link' to={'news'} > News </NavLink></li>
+          </ul>
+        </nav>
+        <div className="profile__content">
           <Outlet />
-      </Box>
+        </div>
+      </div>
   );
 }
 export default Intern;

@@ -4,7 +4,6 @@ import {useSelector} from "react-redux";
 const HomePage = (props) => {
   const currentRole = useSelector(selectUserRole)
   const currentLogged = useSelector(selectIsLoggedIn)
-  console.log(currentLogged)
   return (
       <section>
         <h2>Main</h2>

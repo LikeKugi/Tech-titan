@@ -15,7 +15,6 @@ const UsersService = {
     return response.data;
   },
   async logIn(data) {
-    console.log(data);
     return {
       user: {
         name: 'John',
