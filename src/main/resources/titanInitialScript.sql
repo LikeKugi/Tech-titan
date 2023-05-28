@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS public."Internee"
 (
     id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
     mobile character varying(12) NOT NULL,
-    "e-mail" character varying(40) NOT NULL,
+    email character varying(40) NOT NULL,
     snils character varying(11) NOT NULL,
     name character varying(40) NOT NULL,
     surname character varying(40) NOT NULL,
@@ -29,13 +29,7 @@ CREATE TABLE IF NOT EXISTS public."Internee"
     "internshipId" bigint,
     "internshipStatus" integer,
     PRIMARY KEY (id),
-    UNIQUE (id),
-    UNIQUE ("internshipStatus"),
-    UNIQUE (citizenship),
-    UNIQUE (city),
-    UNIQUE ("moscowDistrict"),
-    UNIQUE ("eduProgram"),
-    UNIQUE ("internshipId")
+    UNIQUE (id)
 );
 
 COMMENT ON TABLE public."Internee"
@@ -381,9 +375,7 @@ CREATE TABLE IF NOT EXISTS public."InternshipRequest"
     closed boolean NOT NULL DEFAULT true,
     review character varying,
     PRIMARY KEY (id),
-    UNIQUE (id),
-    UNIQUE (company),
-    UNIQUE (stage)
+    UNIQUE (id)
 );
 
 COMMENT ON TABLE public."InternshipRequest"
@@ -483,17 +475,49 @@ CREATE TABLE IF NOT EXISTS public."TutorSchoolPrograms"
 COMMENT ON TABLE public."TutorSchoolPrograms"
     IS 'Школа наставников - программы';
 
-ALTER TABLE IF EXISTS public."Citizenship"
-    ADD FOREIGN KEY (id)
-    REFERENCES public."Internee" (citizenship) MATCH SIMPLE
+ALTER TABLE IF EXISTS public."Internee"
+    ADD FOREIGN KEY (citizenship)
+    REFERENCES public."Citizenship" (id) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
 
 
-ALTER TABLE IF EXISTS public."City"
-    ADD FOREIGN KEY (id)
-    REFERENCES public."Internee" (city) MATCH SIMPLE
+ALTER TABLE IF EXISTS public."Internee"
+    ADD FOREIGN KEY (city)
+    REFERENCES public."City" (id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS public."Internee"
+    ADD FOREIGN KEY ("moscowDistrict")
+    REFERENCES public."MoscowDistricts" (id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS public."Internee"
+    ADD FOREIGN KEY ("eduProgram")
+    REFERENCES public."EduPrograms" (id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS public."Internee"
+    ADD FOREIGN KEY ("internshipId")
+    REFERENCES public."InternshipRequest" (id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS public."Internee"
+    ADD FOREIGN KEY ("internshipStatus")
+    REFERENCES public."StatusesInternship" (id) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
@@ -502,14 +526,6 @@ ALTER TABLE IF EXISTS public."City"
 ALTER TABLE IF EXISTS public."PasswordsInternee"
     ADD FOREIGN KEY (id)
     REFERENCES public."Internee" (id) MATCH SIMPLE
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
-
-
-ALTER TABLE IF EXISTS public."MoscowDistricts"
-    ADD FOREIGN KEY (id)
-    REFERENCES public."Internee" ("moscowDistrict") MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
@@ -547,25 +563,9 @@ ALTER TABLE IF EXISTS public."PasswordHR"
     NOT VALID;
 
 
-ALTER TABLE IF EXISTS public."Timetable"
-    ADD FOREIGN KEY (id)
-    REFERENCES public."Internee" ("eduProgram") MATCH SIMPLE
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
-
-
 ALTER TABLE IF EXISTS public."PresencePull"
     ADD FOREIGN KEY (id)
     REFERENCES public."Internee" (id) MATCH SIMPLE
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
-
-
-ALTER TABLE IF EXISTS public."EduPrograms"
-    ADD FOREIGN KEY (id)
-    REFERENCES public."Internee" ("eduProgram") MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
@@ -636,40 +636,16 @@ ALTER TABLE IF EXISTS public."TypesMaterials"
 
 
 ALTER TABLE IF EXISTS public."InternshipRequest"
-    ADD FOREIGN KEY (id)
-    REFERENCES public."Internee" ("internshipId") MATCH SIMPLE
+    ADD FOREIGN KEY (company)
+    REFERENCES public."Companies" (id) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
 
 
 ALTER TABLE IF EXISTS public."InternshipRequest"
-    ADD FOREIGN KEY (id)
-    REFERENCES public."Tutor" (id) MATCH SIMPLE
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
-
-
-ALTER TABLE IF EXISTS public."Companies"
-    ADD FOREIGN KEY (id)
-    REFERENCES public."InternshipRequest" (company) MATCH SIMPLE
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
-
-
-ALTER TABLE IF EXISTS public."StatusesInternship"
-    ADD FOREIGN KEY (id)
-    REFERENCES public."Internee" ("internshipStatus") MATCH SIMPLE
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
-
-
-ALTER TABLE IF EXISTS public."StagesInternship"
-    ADD FOREIGN KEY (id)
-    REFERENCES public."InternshipRequest" (stage) MATCH SIMPLE
+    ADD FOREIGN KEY (stage)
+    REFERENCES public."StagesInternship" (id) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
