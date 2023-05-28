@@ -1,7 +1,7 @@
-const CareerProjects = (props) => {
+const CareerProjects = () => {
   return (
       <section>
-          <h2>Career Projects</h2>
+          <h2>Карьера</h2>
       </section>
   );
 }

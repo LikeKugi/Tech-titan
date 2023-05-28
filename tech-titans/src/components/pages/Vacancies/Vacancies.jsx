@@ -1,7 +1,7 @@
-const Vacancies = (props) => {
+const Vacancies = () => {
   return (
       <section>
-          <h2>Vacancies</h2>
+          <h2>Вакансии</h2>
       </section>
   );
 }

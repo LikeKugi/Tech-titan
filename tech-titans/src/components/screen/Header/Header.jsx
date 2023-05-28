@@ -7,7 +7,7 @@ import Container from "../Container/Container";
 
 import './Header.css'
 
-const Header = (props) => {
+const Header = () => {
   const dispatch = useDispatch();
   const currentLogged = useSelector(selectIsLoggedIn);
   const logOutUser = () => {
@@ -19,10 +19,10 @@ const Header = (props) => {
         <Container>
           <div className='header__bar'>
             <NavBar/>
-            {!currentLogged && <Link to={'/login'}>Login</Link>}
+            {!currentLogged && <Link to={'/login'}>Войти</Link>}
             {currentLogged && (<div className="header__box-log">
-              <Link to={'/profile'}>Profile</Link>
-              <button type="button" onClick={logOutUser}>Logout</button>
+              <Link to={'/profile'} style={{marginRight: '1rem'}}>Profile</Link>
+              <button type="button" onClick={logOutUser}>Выйти</button>
             </div>)}
           </div>
         </Container>

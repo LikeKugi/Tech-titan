@@ -1,10 +1,8 @@
 import {useQuery} from "react-query";
 import NewsService from "../../../../services/news.service";
-import {useDispatch} from "react-redux";
 import NewsItem from "../../../screen/NewsItem/NewsItem";
 
-const InternNews = (props) => {
-  const dispatch = useDispatch();
+const InternNews = () => {
   const {data, isLoading, error} = useQuery(['news'], () => NewsService.getSimpleNews())
   if (isLoading) return <p>Is loading...</p>
   if (error) {

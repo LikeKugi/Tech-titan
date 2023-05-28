@@ -13,10 +13,8 @@ import Profile from "../pages/Profile/Profile";
 import InternPhonetic from "../roles/Intern/InternApplication/InternPhoenetic";
 import InternCareer from "../roles/Intern/InternCareer/InternCareer";
 import InternTest from "../roles/Intern/InternTest/InternTest";
-import InternNews from "../roles/Intern/InternNews/InternNews";
-import Container from "../screen/Container/Container";
 
-const Router = (props) => {
+const Router = () => {
   return (
       <BrowserRouter>
         <Header/>
@@ -49,8 +47,6 @@ const Router = (props) => {
                        element={<InternCareer/>}/>
                 <Route path={'test'}
                        element={<InternTest/>}/>
-                <Route path={'news'}
-                       element={<InternNews/>}/>
               </Route>
 
 

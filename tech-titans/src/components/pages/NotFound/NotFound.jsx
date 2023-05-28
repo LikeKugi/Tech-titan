@@ -1,7 +1,7 @@
-const NotFound = (props) => {
+const NotFound = () => {
   return (
       <section>
-          <h1>404: The page is not found</h1>
+          <h1>404: Страница не найдена</h1>
       </section>
   );
 }

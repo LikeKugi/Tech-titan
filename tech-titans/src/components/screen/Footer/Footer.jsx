@@ -1,10 +1,10 @@
 import Container from "../Container/Container";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
       <footer>
         <Container>
-          <h2>Footer</h2>
+          <h2>Интерактивное сообщество</h2>
         </Container>
       </footer>
   );

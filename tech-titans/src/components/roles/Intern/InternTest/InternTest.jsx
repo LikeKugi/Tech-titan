@@ -1,7 +1,7 @@
-const InternTest = (props) => {
+const InternTest = () => {
   return (
       <section>
-          <h3>some user tests</h3>
+          <h3>Тестирования</h3>
       </section>
   );
 }

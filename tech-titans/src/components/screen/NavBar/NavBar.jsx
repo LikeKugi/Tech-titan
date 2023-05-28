@@ -7,10 +7,10 @@ const NavBar = (props) => {
   return (
       <nav className={navClasses}>
         <ul className='nav__list'>
-          <li className='nav__item'><NavLink className='nav__link' to={'/'}>Main</NavLink></li>
-          <li className='nav__item'><NavLink className='nav__link' to={'/news'}>News</NavLink></li>
-          <li className='nav__item'><NavLink className='nav__link' to={'/career'}>Career</NavLink></li>
-          <li className='nav__item'><NavLink className='nav__link' to={'/vacancies'}>Vacancies</NavLink></li>
+          <li className='nav__item'><NavLink className='nav__link' to={'/'}>Главная</NavLink></li>
+          <li className='nav__item'><NavLink className='nav__link' to={'/news'}>Новости</NavLink></li>
+          <li className='nav__item'><NavLink className='nav__link' to={'/career'}>Карьера</NavLink></li>
+          <li className='nav__item'><NavLink className='nav__link' to={'/vacancies'}>Вакансии</NavLink></li>
         </ul>
       </nav>
   );

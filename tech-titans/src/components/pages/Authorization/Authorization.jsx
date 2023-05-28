@@ -5,16 +5,16 @@ import {Link} from "react-router-dom";
 
 const authState = {
   1: {
-    title: 'login',
-    btn: 'register',
+    title: 'Войти',
+    btn: 'Зарегистрироваться',
   },
   2: {
-    title: 'register',
-    btn: 'have an account',
+    title: 'Зарегистрироваться',
+    btn: 'уже есть аккаунт',
   },
 };
 
-const Authorization = (props) => {
+const Authorization = () => {
   const [auth, setAuth] = useState(1);
   const login = () => {
     setAuth(1);

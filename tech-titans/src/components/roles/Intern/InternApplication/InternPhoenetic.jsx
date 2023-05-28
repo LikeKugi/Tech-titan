@@ -1,9 +1,9 @@
 import Phonetic from "../../../screen/Phonetic/Phonetic";
 
-const InternPhoenetic = (props) => {
+const InternPhoenetic = () => {
   return (
       <section>
-          <h3>Intern Application</h3>
+          <h3>Анкета кандидата</h3>
           <Phonetic />
       </section>
   );

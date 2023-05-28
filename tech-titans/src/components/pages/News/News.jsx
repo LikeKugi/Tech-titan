@@ -1,7 +1,10 @@
-const News = (props) => {
+import NewsList from "../../screen/NewsList/NewsList";
+
+const News = () => {
   return (
       <section>
-          <h2>News</h2>
+          <h2>Новости</h2>
+          <NewsList />
       </section>
   );
 }
