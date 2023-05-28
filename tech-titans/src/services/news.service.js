@@ -12,6 +12,10 @@ const NewsService = {
       return news;
     }
   },
+  async postNews(data) {
+    const { data: response } = await axios.post('http://188.72.109.179:8082/api/news', data);
+    return response.data;
+  }
 }
 
 export default NewsService;

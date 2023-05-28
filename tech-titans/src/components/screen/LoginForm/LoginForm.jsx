@@ -28,13 +28,13 @@ const LoginForm = ({title}) => {
       <form onSubmit={handleSubmit(logIn)} className='login'>
         <label className='login__label'>
           <span className='login__text'>Логин: </span>
-          <input type="text"
+          <input className='login__input' type="text" autoFocus
                  {...register('email', {required: true})}
                  placeholder='Логин'/>
         </label>
         <label className='login__label'>
           <span className='login__text'>Пароль: </span>
-          <input type="password"
+          <input className='login__input' type="password"
                  {...register('password', {required: true})}
                  placeholder='Пароль'/>
         </label>

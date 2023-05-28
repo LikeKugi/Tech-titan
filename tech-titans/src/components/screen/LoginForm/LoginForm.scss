@@ -13,4 +13,10 @@
     padding: 10px 40px;
     align-self: center;
   }
+
+  &__input {
+    min-width: 250px;
+    display: block;
+    padding: 5px 10px;
+  }
 }

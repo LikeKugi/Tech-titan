@@ -16,6 +16,7 @@ import InternTest from "../roles/Intern/InternTest/InternTest";
 import Container from "../screen/Container/Container";
 import {useSelector} from "react-redux";
 import {selectUserRole} from "../../store/slices/userSlice";
+import DateBox from "../screen/DateBox/DateBox";
 
 const Router = () => {
   const currentRole = useSelector(selectUserRole);
@@ -27,6 +28,7 @@ const Router = () => {
           {currentRole === 'intern' && <Energies min={30} max={66}/>}
           {currentRole === 'trainee' && <Energies min={66} max={85}/>}
           {currentRole === 'mentor' && <Energies min={70} max={100}/>}
+          <DateBox />
           <Container>
             <Routes>
 

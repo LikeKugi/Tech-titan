@@ -8,7 +8,7 @@ const Intern = () => {
         <nav className="profile__nav controls">
           <ul className="controls__list">
             <li className="controls__item"><NavLink className='controls__link'
-                                                    to={'phonetic'}> Анкета на стажировку </NavLink></li>
+                                                    to={'phonetic'}> Личные данные </NavLink></li>
             <li className="controls__item"><NavLink className='controls__link'
                                                     to={'career'}> Карьера </NavLink></li>
             <li className="controls__item"><NavLink className='controls__link'
