@@ -2,15 +2,24 @@
   &__field {
     max-width: 900px;
     width: 100%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+    border-radius: 15px;
+    background-color: floralwhite;
+
+    legend {
+      padding: 5px;
+      background-color: floralwhite;
+      border-radius: 5px 5px 0 0;
+    }
 
     label {
       display: flex;
       &:not(:last-of-type) {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
       }
     }
   }
