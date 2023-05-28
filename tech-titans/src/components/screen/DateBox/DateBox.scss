@@ -1,0 +1,47 @@
+.datebox {
+  position: fixed;
+  right: 0;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.date {
+  &__current {
+    padding: 7px;
+    background-color: floralwhite;
+    border: 1px solid #313131;
+    border-radius: 12px 0 0 12px;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  &__text {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  &__weekday {
+    font-size: 0.7rem;
+  }
+  &__day {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  &__month {
+    font-size: 1.1rem;
+  }
+  &__year {
+    font-size: 0.7rem;
+  }
+  &__toggle {
+    display: block;
+    margin-left: auto;
+  }
+  &__controls {
+    padding-top: 5px;
+  }
+}
+
+.calendar {
+  padding-top: 5px;
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);
+}

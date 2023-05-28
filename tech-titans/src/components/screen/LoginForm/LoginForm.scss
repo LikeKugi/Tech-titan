@@ -1,0 +1,32 @@
+.login {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &__label {
+    position: relative;
+    min-width: 350px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__btn {
+    display: block;
+    padding: 10px 40px;
+    align-self: center;
+  }
+
+  &__text {
+    padding-right: 10px;
+  }
+
+  &__input {
+    min-width: 250px;
+    display: block;
+    padding: 5px 10px;
+  }
+  &__error {
+    margin: 0;
+    padding: 0;
+    color: red;
+  }
+}

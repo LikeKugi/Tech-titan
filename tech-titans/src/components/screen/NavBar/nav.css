@@ -1,0 +1,23 @@
+.nav__list {
+  display: flex;
+  list-style-type: none;
+}
+.nav__item:not(:last-of-type) {
+  margin-right: 15px;
+}
+.nav__link {
+  font-size: 20px;
+  padding: 10px 60px;
+  cursor: pointer;
+  opacity: 0.6;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+}
+.nav__link.active {
+  border-bottom: 2px solid darkorchid;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=nav.css.map */
