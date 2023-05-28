@@ -1,0 +1,26 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style-type: none;
+  }
+  &__item {
+    &:not(:last-of-type) {
+      margin-right: 15px;
+    }
+  }
+
+  &__link {
+    font-size: 20px;
+    padding: 10px 60px;
+    cursor: pointer;
+    opacity: 0.6;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    &.active {
+      border-bottom: 2px solid darkorchid;
+      opacity: 1;
+    }
+  }
+}
