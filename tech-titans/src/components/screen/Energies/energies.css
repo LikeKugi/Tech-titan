@@ -16,7 +16,7 @@
   width: 100%;
   border: 1px solid #313131;
   border-radius: 12px;
-  background-color: #fefae1;
+  background-color: floralwhite;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,6 @@
 .energies__level {
   width: 100%;
   transition: all 0.3s ease-out;
-  background-color: darkorchid;
 }
 
 .energy {

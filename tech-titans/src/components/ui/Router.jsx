@@ -25,8 +25,8 @@ const Router = () => {
 
         <PageContent>
           {currentRole === 'intern' && <Energies min={30} max={66}/>}
-          {currentRole === 'trainee' && <Energies min={66} max={99}/>}
-          {currentRole === 'mentor' && <Energies min={66} max={100}/>}
+          {currentRole === 'trainee' && <Energies min={66} max={85}/>}
+          {currentRole === 'mentor' && <Energies min={70} max={100}/>}
           <Container>
             <Routes>
 
