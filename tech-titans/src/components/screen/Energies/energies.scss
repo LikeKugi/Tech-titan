@@ -11,6 +11,7 @@
   border: 1px solid #313131;
   border-radius: 0 12px 12px 0;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  z-index: 99;
 
   &__wrapper {
     height: 100%;

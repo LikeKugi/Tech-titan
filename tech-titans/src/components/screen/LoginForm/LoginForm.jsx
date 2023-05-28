@@ -4,14 +4,14 @@ import usersService from "../../../services/users.service";
 import {useDispatch} from "react-redux";
 import {signUp} from "../../../store/slices/userSlice";
 import {useNavigate} from "react-router-dom";
+import {useState} from "react";
 
 import './LoginForm.css'
-import {useState} from "react";
 
 const LoginForm = ({title, registration}) => {
   const navigate = useNavigate();
   const [error, setError] = useState('');
-  const {register, reset, handleSubmit, formState: { errors }, clearErrors} = useForm({
+  const {register, reset, handleSubmit, formState: { errors }} = useForm({
     mode: 'onChange',
   });
   const dispatch = useDispatch();
@@ -22,14 +22,12 @@ const LoginForm = ({title, registration}) => {
     },
   });
   const logIn = (data) => {
-    console.log(errors);
     if (registration) {
       if (data.password !== data.confirmPassword) {
         setError('Пароли должны совпадать');
         return;
       }
     }
-    clearErrors()
     mutate(data);
     navigate('/');
   }

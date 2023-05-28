@@ -19,7 +19,7 @@ const UsersService = {
       user: {
         name: 'John',
         surname: 'Doe',
-        role: testRoles[data.email],
+        role: testRoles[data.nickname],
       }
     }
   }
