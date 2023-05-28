@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {logOut, selectIsLoggedIn} from "../../../store/slices/userSlice";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 import NavBar from "../NavBar/NavBar";
 import Container from "../Container/Container";
@@ -8,11 +8,12 @@ import Container from "../Container/Container";
 import './Header.css'
 
 const Header = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const currentLogged = useSelector(selectIsLoggedIn);
   const logOutUser = () => {
-    console.log('header logout');
     dispatch(logOut());
+    navigate('/');
   }
   return (
       <header className='header'>

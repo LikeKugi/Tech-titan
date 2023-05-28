@@ -1,3 +1,5 @@
+import withAuth from "../../../HOC/withAuth";
+
 const Vacancies = () => {
   return (
       <section>
@@ -5,4 +7,4 @@ const Vacancies = () => {
       </section>
   );
 }
-export default Vacancies;
+export default withAuth(Vacancies);

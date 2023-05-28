@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
       <section>
         <h2>Главная страница</h2>
-        <p>Добро пожаловать, {currentRole}</p>
+        {currentRole && <p>Добро пожаловать, {currentRole}</p>}
       </section>);
 }
 export default HomePage;

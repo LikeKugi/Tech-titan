@@ -1,9 +1,12 @@
-const InternCareer = (props) => {
+import {Link} from "react-router-dom";
+
+const InternCareer = () => {
   return (
       <section>
           <ul>
-              <li>Online Moscow government link</li>
-              <li>Telegram link</li>
+            <li><Link to={'https://t.me/ugskpm'} target={'_blank'}>Карьерный портал правительства Москвы</Link> </li>
+            <li><Link to={'https://mguu.ru/'} target={'_blank'}>Университет Правительства Москвы</Link> </li>
+            <li><Link to={'https://talent.mos.ru/'} target={'_blank'}>Teleram</Link> </li>
           </ul>
       </section>
   );

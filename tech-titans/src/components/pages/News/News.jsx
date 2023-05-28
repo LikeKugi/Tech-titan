@@ -1,4 +1,5 @@
 import NewsList from "../../screen/NewsList/NewsList";
+import withAuth from "../../../HOC/withAuth";
 
 const News = () => {
   return (
@@ -8,4 +9,4 @@ const News = () => {
       </section>
   );
 }
-export default News;
+export default withAuth(News);

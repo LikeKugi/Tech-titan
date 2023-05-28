@@ -5,6 +5,8 @@ import {useDispatch} from "react-redux";
 import {signUp} from "../../../store/slices/userSlice";
 import {useNavigate} from "react-router-dom";
 
+import './LoginForm.css'
+
 const LoginForm = ({title}) => {
   const navigate = useNavigate();
   const {register, reset, handleSubmit} = useForm({
@@ -23,14 +25,21 @@ const LoginForm = ({title}) => {
   }
 
   return (
-      <form onSubmit={handleSubmit(logIn)}>
-        <input type="text"
-               {...register('email', {required: true})}
-               placeholder='Логин'/>
-        <input type="password"
-               {...register('password', {required: true})}
-               placeholder='Пароль'/>
-        <button type="submit">{title}</button>
+      <form onSubmit={handleSubmit(logIn)} className='login'>
+        <label className='login__label'>
+          <span className='login__text'>Логин: </span>
+          <input type="text"
+                 {...register('email', {required: true})}
+                 placeholder='Логин'/>
+        </label>
+        <label className='login__label'>
+          <span className='login__text'>Пароль: </span>
+          <input type="password"
+                 {...register('password', {required: true})}
+                 placeholder='Пароль'/>
+        </label>
+
+        <button type="submit" className='login__btn'>{title}</button>
       </form>
   );
 }

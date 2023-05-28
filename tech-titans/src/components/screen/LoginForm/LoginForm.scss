@@ -1,0 +1,16 @@
+.login {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &__label {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__btn {
+    display: block;
+    padding: 10px 40px;
+    align-self: center;
+  }
+}

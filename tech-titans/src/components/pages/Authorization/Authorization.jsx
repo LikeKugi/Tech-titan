@@ -5,12 +5,12 @@ import {Link} from "react-router-dom";
 
 const authState = {
   1: {
-    title: 'Войти',
+    title: 'Вход',
     btn: 'Зарегистрироваться',
   },
   2: {
-    title: 'Зарегистрироваться',
-    btn: 'уже есть аккаунт',
+    title: 'Регистрация',
+    btn: 'Уже есть аккаунт',
   },
 };
 
@@ -32,10 +32,10 @@ const Authorization = () => {
   return (
       <div className='back'>
         <div className='authorization'>
-          <h2>{authState[auth].title}</h2>
+          <Link to={'/'} className='authorization__close'>&#10060;</Link>
+          <h2 className='authorization__title'>{authState[auth].title}</h2>
           <LoginForm title={authState[auth].title} handleClick='{}'/>
-          <button onClick={btnState}>{authState[auth].btn}</button>
-          <Link to={'/'}>Close</Link>
+          <button onClick={btnState} className='authorization__toggle'>{authState[auth].btn}</button>
         </div>
       </div>
   );

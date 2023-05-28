@@ -1,10 +1,12 @@
-import {createContext, useState} from "react";
+import {createContext} from "react";
+import {useSelector} from "react-redux";
+import {selectIsLoggedIn} from "../store/slices/userSlice";
 
 export const AuthContext = createContext();
 const AuthProvider = ({children}) => {
-    const [user, setUser] = useState(null);
+  const currentLogged = useSelector(selectIsLoggedIn);
   return (
-      <AuthContext.Provider value={{user, setUser}}>
+      <AuthContext.Provider value={{currentLogged}}>
           {children}
       </AuthContext.Provider>
   );

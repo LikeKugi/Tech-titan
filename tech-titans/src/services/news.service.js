@@ -5,7 +5,7 @@ const news = [{"id":1,"date":"2023-12-25","header":"Новость один","bo
 const NewsService = {
   async getSimpleNews() {
     try {
-      const response = await axios.get('http://188.72.109.179:8082/news');
+      const response = await axios.get('http://188.72.109.179:8082/api/news');
       return response.data;
     } catch (e) {
       console.log(e)

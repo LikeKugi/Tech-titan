@@ -6,7 +6,7 @@ function App() {
   return (
       <PageContainer>
 
-          <Router />
+         <Router />
 
       </PageContainer>
   );

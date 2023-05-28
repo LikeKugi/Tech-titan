@@ -7,6 +7,7 @@ import './assets/styles/global.css';
 
 import App from "./App";
 import {store} from "./store";
+import AuthProvider from "./providers/AuthProvider";
 
 
 
@@ -18,7 +19,9 @@ root.render(
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>
           <Provider store={store}>
-            <App/>
+            <AuthProvider>
+              <App/>
+            </AuthProvider>
           </Provider>
         </QueryClientProvider>
     </React.StrictMode>

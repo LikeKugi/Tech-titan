@@ -8,16 +8,22 @@
   margin-right: 1rem;
 }
 .controls__link {
-  cursor: pointer;
+  padding-bottom: 2px;
   opacity: 0.6;
   background: transparent;
   border: 0;
   outline: 0;
+  color: #00050F;
   text-decoration: none;
+  cursor: pointer;
 }
 .controls__link.active {
+  color: darkorchid;
   border-bottom: 2px solid darkorchid;
   opacity: 1;
+}
+.controls__link:hover, .controls__link:active, .controls__link :visited {
+  color: #00050F;
 }
 
 /*# sourceMappingURL=Intern.css.map */

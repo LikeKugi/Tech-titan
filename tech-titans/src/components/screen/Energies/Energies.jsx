@@ -39,7 +39,7 @@ const Energies = (props) => {
   return (
       <>
       <div className="energy">
-        <button className="energy__toggle" onClick={toggle}>Уровень энергии</button>
+        <button className="energy__toggle" onClick={toggle}>{show? 'Скрыть уровень энергии' : 'Показать уровень энергии'}</button>
       </div>
         {show && <aside className='energies'>
           <p>Энергия</p>
