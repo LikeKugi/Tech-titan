@@ -59,5 +59,6 @@
 - [Петр](https://github.com/Frenchfan)
 - [Илья](https://github.com/LikeKugi)
 - [Денис](https://github.com/frontsteron)
+- [Эльвира](https://github.com/ElviraAsadullina)
 
 **© Ваша команда разработчиков**
