@@ -28,13 +28,81 @@
 1. Установите операционную систему Ubuntu версии 22.04.
 2. Установите Docker и Docker Compose на вашу систему.
 3. Установите SDKman и используйте его для установки Java, Spring Boot и Maven.
-4. Установите PostgreSQL и настройте базу данных.
-5. Установите и настройте Keycloak для обеспечения авторизации пользователей.
-6. Установите Rabbit MQ и настройте его в качестве брокера сообщений.
-7. Установите Nginx и настройте его для обработки фронтэнда.
-8. Склонируйте репозиторий проекта и перейдите в его директорию.
-9. Сконфигурируйте необходимые параметры в файле конфигурации.
-10. Запустите приложение с помощью Docker Compose.
+4. Запустите [docker-compose.yml](https://github.com/LikeKugi/Tech-titan/blob/back/src/main/resources/docker-compose.yml) 
+5. В папке, из которой запущен docker-compose будет развернута PostgreSQL (15) с базой данных titans.
+6. Persistent data для Postgres хранится во вложенной папке (внутри рабочего каталога) - /database, порт 5432
+7. Структура базы данных (система таблиц и связей) - [структура](https://github.com/LikeKugi/Tech-titan/blob/back/src/main/resources/titan.pgerd.png)
+8. В этой же папке будет развернут pgadmin для управления базой данных, его данные хранятся в папке /pgadmin
+9. Через веб-интерфейс pgadmin (порт 5050) запустите инициализирующий скрипт для создания структуры бд - [скрипт](https://github.com/LikeKugi/Tech-titan/blob/back/src/main/resources/titanInitialScript.sql) 
+10. В этой же папке будет развернут брокер сообщений Rabbit MQ, его данные хранятся в папке /rabbitmq.
+11. В этой же папке будет развернут Nginx, его данные хранятся в папке /nginx. Дополнительный конфигурационный файл к нему:
+```
+user  nginx;
+worker_processes  auto;
+
+error_log  /var/log/nginx/error.log notice;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+        server {
+        listen 80;
+        listen [::]:80;
+
+                location / {
+                        root /usr/share/nginx/html;
+                        try_files $uri /index.html;
+                }
+
+
+                location  /api/news {
+                proxy_set_header X-Forwarded_For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $http_post;
+                proxy_redirect off;
+                #rewrite ^/api(.*) $1 break;
+                proxy_pass http://188.72.109.179:8084/news;
+        }
+                location  /api/internee {
+                proxy_set_header X-Forwarded_For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $http_post;
+                proxy_redirect off;
+                #rewrite ^/api(.*) $1 break;
+                proxy_pass http://188.72.109.179:8084/internee;
+        }
+        }
+
+
+    include /etc/nginx/conf.d/*.conf;
+}
+```
+13. После применения конфигурационного файла перезапутите nginx.
+14. Скомпилируйте бэк через Maven - clean, packeage. Разместите в папе проекта полученный исполняемый дистрибутив (jar)
+15. Запустите jar командой:
+```
+nohup java -jar titan-1.jar &
+```
+17. Откройте браузер, порт 8082 (nginx) для работы с проектом
 
 ## Функциональность
 
