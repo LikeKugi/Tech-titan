@@ -1,12 +1,13 @@
 import './energies.css'
 import {useEffect, useState} from "react";
-const Energies = () => {
-  const [energiesLvl, setEnergiesLvl] = useState(55);
+const Energies = (props) => {
+  const {min, max} = props;
+  const [energiesLvl, setEnergiesLvl] = useState(min);
 
   useEffect(() => {
-    const ht = 55 + Math.floor(Math.random() * 10 * (Math.random() - 0.5));
+    const ht = Math.floor(Math.random() * (max - min) + min);
     setEnergiesLvl(ht)
-  }, [])
+  }, [min, max])
 
   return (
       <aside className='energies'>

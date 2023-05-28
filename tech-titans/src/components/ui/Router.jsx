@@ -13,14 +13,21 @@ import Profile from "../pages/Profile/Profile";
 import InternPhonetic from "../roles/Intern/InternApplication/InternPhoenetic";
 import InternCareer from "../roles/Intern/InternCareer/InternCareer";
 import InternTest from "../roles/Intern/InternTest/InternTest";
+import Container from "../screen/Container/Container";
+import {useSelector} from "react-redux";
+import {selectUserRole} from "../../store/slices/userSlice";
 
 const Router = () => {
+  const currentRole = useSelector(selectUserRole);
   return (
       <BrowserRouter>
         <Header/>
 
-            <PageContent>
-            <Energies/>
+        <PageContent>
+          {currentRole === 'intern' && <Energies min={30} max={66}/>}
+          {currentRole === 'trainee' && <Energies min={66} max={99}/>}
+          {currentRole === 'mentor' && <Energies min={66} max={100}/>}
+          <Container>
             <Routes>
 
               <Route path={'/'}
@@ -53,7 +60,8 @@ const Router = () => {
               <Route path='*'
                      element={<NotFound/>}/>
             </Routes>
-            </PageContent>
+          </Container>
+        </PageContent>
 
         <Footer/>
       </BrowserRouter>
