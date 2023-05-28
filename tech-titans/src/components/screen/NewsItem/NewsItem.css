@@ -1,0 +1,25 @@
+.news-item {
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: floralwhite;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.25);
+}
+.news-item:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.news-item__date {
+  margin-right: 15px;
+}
+.news-item__photo {
+  max-height: 150px;
+  max-width: 150px;
+  margin-right: 50px;
+}
+.news-item__photo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=NewsItem.css.map */
