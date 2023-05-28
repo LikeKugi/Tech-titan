@@ -26,7 +26,7 @@ public class RestApiNewsController {
 	}
 
 	@GetMapping("/{id}")
-	Optional<News> getNewsById(@PathVariable String id) {
+	Optional<News> getNewsById(@PathVariable Integer id) {
 		return newsRepository.findById(id);
 	}
 
@@ -36,7 +36,7 @@ public class RestApiNewsController {
 	}
 
 	@PutMapping("/{id}")
-	ResponseEntity<News> putNews(@PathVariable String id,
+	ResponseEntity<News> putNews(@PathVariable Integer id,
 									 @RequestBody News coffee) {
 
 		return (newsRepository.existsById(id))
@@ -45,7 +45,7 @@ public class RestApiNewsController {
 	}
 
 	@DeleteMapping("/{id}")
-	void deleteNews(@PathVariable String id) {
+	void deleteNews(@PathVariable Integer id) {
 		newsRepository.deleteById(id);
 	}
 
