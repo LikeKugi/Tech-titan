@@ -7,10 +7,12 @@ const authState = {
   1: {
     title: 'Вход',
     btn: 'Зарегистрироваться',
+    registration: false,
   },
   2: {
     title: 'Регистрация',
     btn: 'Уже есть аккаунт',
+    registration: true,
   },
 };
 
@@ -34,7 +36,7 @@ const Authorization = () => {
         <div className='authorization'>
           <Link to={'/'} className='authorization__close'>&#10060;</Link>
           <h2 className='authorization__title'>{authState[auth].title}</h2>
-          <LoginForm title={authState[auth].title} handleClick='{}'/>
+          <LoginForm title={authState[auth].title} registration={authState[auth].registration} handleClick='{}'/>
           <button onClick={btnState} className='authorization__toggle'>{authState[auth].btn}</button>
         </div>
       </div>

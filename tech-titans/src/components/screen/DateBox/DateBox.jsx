@@ -10,7 +10,6 @@ const DateBox = () => {
   const year = today.getFullYear();
   const day = today.toLocaleString('ru-RU', {day: '2-digit'});
   const weekday = new Intl.DateTimeFormat('ru-RU', {weekday: "long",}).format(today);
-  console.log(weekday);
   return (
       <aside className='datebox'>
         <div className='date'>
