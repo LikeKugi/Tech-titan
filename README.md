@@ -29,11 +29,12 @@
 2. Установите Docker и Docker Compose на вашу систему.
 3. Установите SDKman и используйте его для установки Java, Spring Boot и Maven.
 4. Запустите [docker-compose.yml](https://github.com/LikeKugi/Tech-titan/blob/back/src/main/resources/docker-compose.yml) 
-5. В папке, из которой запущен docker-compose будет развернута PostgreSQL (15) с базой данных titans.
-6. Persistent data для Postgres хранится во вложенной папке (внутри рабочего каталога) - /database, порт 5432
-7. Структура базы данных (система таблиц и связей) - [структура](https://github.com/LikeKugi/Tech-titan/blob/back/src/main/resources/titan.pgerd.png)
+5. В папке, из которой запущен docker-compose, будет развернута PostgreSQL (15) с базой данных titans.
+6. Учетные данные для бд: логин - postgres, пароль - adminpwd
+7. Persistent data для Postgres хранится во вложенной папке (внутри рабочего каталога) - /database, порт 5432
+8. Структура базы данных (система таблиц и связей) - [структура](https://github.com/LikeKugi/Tech-titan/blob/back/src/main/resources/titan.pgerd.png)
 ![структура](https://github.com/LikeKugi/Tech-titan/blob/back/src/main/resources/titan.pgerd.png)
-8. В этой же папке будет развернут pgadmin для управления базой данных, его данные хранятся в папке /pgadmin
+8. В этой же папке будет развернут pgadmin для управления базой данных, его данные хранятся в папке /pgadmin. Учетные данные: логин - admin@gmail.com, пароль - adminpwd
 9. Через веб-интерфейс pgadmin (порт 5050) запустите инициализирующий скрипт для создания структуры бд - [скрипт](https://github.com/LikeKugi/Tech-titan/blob/back/src/main/resources/titanInitialScript.sql) 
 10. В этой же папке будет развернут брокер сообщений Rabbit MQ, его данные хранятся в папке /rabbitmq.
 11. В этой же папке будет развернут Nginx, его данные хранятся в папке /nginx. Дополнительный конфигурационный файл к нему:
